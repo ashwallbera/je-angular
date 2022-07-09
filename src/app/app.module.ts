@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './admin/admin.module';
 import { LoginModule } from './login/login.module';
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,11 @@ import { LoginModule } from './login/login.module';
     BrowserAnimationsModule,
     MatButtonModule,
     MatSidenavModule,
+    HttpClientModule
 
     
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

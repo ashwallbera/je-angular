@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { HeaderComponent } from './header/header.component';
 import { MatIconModule} from '@angular/material/icon'
+import { UserService } from '../services/user.service';
+import { QrCodeModule } from 'ng-qrcode';
 
 
 @NgModule({
@@ -19,13 +21,15 @@ import { MatIconModule} from '@angular/material/icon'
     DashboardComponent,
     EmployeelistComponent,
     HeaderComponent,
+    
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     MatSidenavModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    QrCodeModule
     
   ]
 })
