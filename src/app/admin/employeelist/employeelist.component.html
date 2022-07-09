@@ -3,6 +3,6 @@
     <p>employee works!</p>
 
 
-    <qr-code *ngFor="let employee of user" style="float:left;" value="employee.id" size="300" errorCorrectionLevel="M"></qr-code>
+    <qr-code *ngFor="let employee of user" style="float:left;" [value]="employee.id" size="300" errorCorrectionLevel="M"></qr-code>
   </div>
 </div>
