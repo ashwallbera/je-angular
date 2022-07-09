@@ -3,11 +3,20 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+:root {
+    --green: #C0FCC7;
+    --gray: #333430;
+    --white: #FFFFFF;
+    --solidgreen: #357A42;
+  }
+
 .component-main{
     padding: 20px;
 }
 .component-content{
     padding: 20px;
+    height: 100%;
+    background-color: var(--white);
 }
 
 .full-width{
