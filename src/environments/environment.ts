@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   api:'http://ashwallbera-001-site1.ctempurl.com'
+  //api:'https://localhost:7158'
 };
 
 
