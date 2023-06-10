@@ -11,6 +11,7 @@ import { AdminModule } from './admin/admin.module';
 import { LoginModule } from './login/login.module';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AppMaterialModule } from './app-material.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatButtonModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
+    AppMaterialModule
 
     
   ],

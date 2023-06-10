@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { MatIconModule} from '@angular/material/icon'
 import { UserService } from '../services/user.service';
 import { QrCodeModule } from 'ng-qrcode';
+import { AppMaterialModule } from '../app-material.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { QrCodeModule } from 'ng-qrcode';
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    QrCodeModule
+    QrCodeModule,
+    AppMaterialModule
     
   ]
 })

@@ -1,8 +1,99 @@
 <div class="component-main">
   <div class="component-content">
-    <p>employee works!</p>
+    <button mat-raised-button color="primary" (click)="openAddEmployeeDialog()">Add employee</button>
 
+    <!-- <div *ngFor="let employee of user">
+      <p>{{ employee.fname }}</p>
+      <qr-code
+        style="float: left"
+        [value]="employee.id"
+        size="300"
+        errorCorrectionLevel="M"
+      ></qr-code>
+    </div> -->
 
-    <qr-code *ngFor="let employee of user" style="float:left;" [value]="employee.id" size="300" errorCorrectionLevel="M"></qr-code>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.lname }}, {{ row.fname }}
+          </td>
+        </ng-container>
+
+        <!-- position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Position</th>
+          <td mat-cell *matCellDef="let row">{{ row.position }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="created">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Created</th>
+          <td mat-cell *matCellDef="let row">{{ row.datecreated }}</td>
+        </ng-container>
+
+        <!-- action Column -->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+          <td mat-cell *matCellDef="let row">
+            <section>
+              <div class="example-flex-container">
+                <div class="example-button-container">
+                  <button
+                    color="primary"
+                    mat-mini-fab
+                    aria-label="Example icon button with a home icon"
+                  >
+                    <mat-icon>add</mat-icon>
+                  </button>
+                </div>
+                <div class="example-button-container">
+                  <button
+                    color="accent"
+                    mat-mini-fab
+                    aria-label="Example icon button with a home icon"
+                  >
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </div>
+                <div class="example-button-container">
+                  <button
+                    mat-mini-fab
+                    aria-label="Example icon button with a home icon"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+                <div class="example-button-container">
+                  <button
+                    mat-mini-fab
+                    aria-label="Example icon button with a home icon"
+                  >
+                    <mat-icon>remove_red_eye</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </section>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <!-- <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">
+            No data matching the filter "{{ input.value }}"
+          </td>
+        </tr> -->
+      </table>
+
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page of users"
+      ></mat-paginator>
+    </div>
   </div>
 </div>
